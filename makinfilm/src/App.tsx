@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import './index.css'
+import Header from './components/templates/Header'
+import backGround from './assets/bg.webp'
+import TakeNow from './components/buttons/TakeNow';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Header />
+      <div className='container relative flex flex-col h-[100svh] mt-[-137px] overflow-hidden p-0 '>
+        <img className='absolute z-[-1] w-[100%]  object-contain' src={backGround} alt=""/>
+        <div className='h-[137px]'/>
+        <div className='mx-[100px] mt-[100px] text-white'>
+          <div className='text-[72px]'>
+            <span className='text-white'> welcomeTo <br /> Makin <br /> Film Production</span>
+          </div>
+          <p className='w-[600px] mt-[20px] mb-[40px]'>
+            With a passion for storytelling and 
+            a commitment to quality, we strive to deliver unforgettable 
+            cinematic experiences that resonate with audiences worldwide. Whether you're 
+            a seasoned filmmaker or an aspiring talent, we invite you 
+            to explore our world of possibilities and embark on a journey 
+            of cinematic excellence with us.
+          </p>
+          <TakeNow />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
