@@ -38,12 +38,159 @@
     body{
       background-color: black !important;
     }
-    *{
+    *{ 
+      padding: 0;
+      margin: 0;
       outline: auo;
       font-family: "Montserrat", sans-serif;
       font-optical-sizing: auto;
       font-weight: 700;
       font-style: normal;
+    }
+    h1{
+      font-size: 50px;
+      padding: 50px 0;
+    }
+    header{
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10);
+      background: linear-gradient(180deg, rgba(153,153,153,0) 0%, rgba(86,86,86,0.1) 100%);
+    }
+    .blurFilter{
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+      
+}
+    .showCases{
+      grid-auto-rows: 10px;
+      justify-content: center;
+    }
+    .showCases div{
+      margin: 10px;
+
+
+}
+
+    .showCases img{
+      filter: grayscale(1);
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      -webkit-filter: grayscale(1);
+    }
+    .smallCard{
+      grid-row-end: span 26;
+    }
+    .mediumCard{
+      grid-row-end: span 33;
+    }
+    .largeCard{
+      grid-row-end: span 45 ;
+    }
+    .recentWork{
+      cursor: grab;
+    }
+    .navigationBar > li {
+      color: #ffffff88;
+    }
+    .navigationBar > li:hover{
+      color: rgb(255, 255, 255);
+    }
+    .navigationBar > li > a {
+      transition: all 0.5s ease  ;
+      -webkit-transition: all 0.5s ease  ;
+      -moz-transition: all 0.5s ease  ;
+      -ms-transition: all 0.5s ease  ;
+      -o-transition: all 0.5s ease  ;
+}
+    .navigationBar > li > .active {
+      color: white;
+     
+}
+    .navigationBar > li > .active + .indicator{
+      color: white;
+      height: 4px;
+      width: 4px;
+      background-color: white;
+      margin: 5px auto;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+    }
+    .indicator {
+      height: 4px;
+      width: 4px;
+      transform: translateX(-50%);
+      background-color: white;
+      margin: 5px auto;
+      border-radius: 100%;
+      transition: all 0.5s ease;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+    .typingContainer{
+      
+    }
+    .typing{
+      position: relative;
+      animation: typing 2s steps(27) cursor 0.4 step-end infinite alternate ;
+      -webkit-animation:;
+    }
+    .wrapper{
+      
+
+    }
+    .wrapper div{
+      filter: brightness(70%);
+      -webkit-filter: brightness(70%);
+}
+    .typing::before{
+
+
+    }
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    .wrapper > .active{
+      filter: brightness(150%);
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+}
+    .wrapper > .card:hover{
+      outline: auto;
+    }
+    @keyframes typing {
+      from { width: 0}
+    }
+    @keyframes cursor {
+      50% { border-color: transparant }
+    }
+    .verticalBlackOverlay{
+      background: linear-gradient(176deg, rgba(153,153,153,0) 0%, rgb(0, 0, 0) 100%);
+    }
+    .horizontalBlackOverlay{
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7959558823529411) 10%, rgba(153,153,153,0) 50%, rgba(40,40,40,0.804359243697479) 90%, rgba(0,0,0,1) 100%, rgba(86,86,86,1) 100%);
+    }
+    .gallery{
+      grid-template-columns: repeat(auto-fill,300px);
     }
     .dark {
       --background: 222.2 84% 4.9%;
