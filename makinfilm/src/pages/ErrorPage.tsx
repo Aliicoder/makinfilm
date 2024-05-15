@@ -1,4 +1,3 @@
-import { Padding } from '@mui/icons-material';
 import WestIcon from '@mui/icons-material/West';
 import { NavLink } from 'react-router-dom';
 const ErrorPage = () => {

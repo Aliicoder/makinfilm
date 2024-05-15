@@ -1,6 +1,6 @@
 import LoadMore from "../buttons/LoadMor";
 import VideoCard from "../cards/VideoCard";
-import Line from "../separtors/Line";
+import Line from "../separators/separators";
 
 const Gallery = () => {
   return ( 

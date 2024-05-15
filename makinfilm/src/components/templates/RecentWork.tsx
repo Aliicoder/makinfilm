@@ -1,56 +1,56 @@
 import { useEffect, useRef, useState } from "react";
 import img3 from './../images/3.jpg'
-import Line from "../separtors/Line";
+import Line from "../separators/separators";
 import LoadMore from "../buttons/LoadMor";
 
 const RecentWork = () => {
-  const wrapperRef = useRef();
-  const card1Ref = useRef();
-  const card2Ref = useRef();
-  const card3Ref = useRef();
-  const card4Ref = useRef();
-  const card5Ref = useRef();
-  const card6Ref = useRef();
-  const card7Ref = useRef();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
+  const card3Ref = useRef<HTMLDivElement>(null);
+  const card4Ref = useRef<HTMLDivElement>(null);
+  const card5Ref = useRef<HTMLDivElement>(null);
+  const card6Ref = useRef<HTMLDivElement>(null);
+  const card7Ref = useRef<HTMLDivElement>(null);
   const [wrapperCenter,setWrapperCenter] = useState(0);
-  let cards:[];
+  let cards:HTMLElement[];
   useEffect(()=>{
-    cards = wrapperRef.current!.querySelectorAll(".card")
+    cards = Array.from(document.querySelectorAll('.card')) as HTMLElement[];
     const coordinates = wrapperRef.current!.getBoundingClientRect();
     setWrapperCenter(_prev => coordinates.left + coordinates.width/2)
     wrapperRef.current!.addEventListener("scroll",updateCoordinates)
   },[updateCoordinates]);
   function updateCoordinates(){
-    if(toleranceComparison(card1Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card1Ref.current && toleranceComparison(card1Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card1Ref.current.classList.add("active");
     }
-    if(toleranceComparison(card2Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card2Ref.current && toleranceComparison(card2Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card2Ref.current.classList.add("active");
     }
-    if(toleranceComparison(card3Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card3Ref.current && toleranceComparison(card3Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card3Ref.current.classList.add("active");
     }
-    if(toleranceComparison(card4Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card4Ref.current && toleranceComparison(card4Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card4Ref.current.classList.add("active");
     }
-    if(toleranceComparison(card5Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card5Ref.current && toleranceComparison(card5Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card5Ref.current.classList.add("active");
     }
-    if(toleranceComparison(card6Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card6Ref.current && toleranceComparison(card6Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card6Ref.current.classList.add("active");
     } 
-    if(toleranceComparison(card7Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
+    if(card7Ref.current && toleranceComparison(card7Ref.current!.getBoundingClientRect().left+150,wrapperCenter)){
       cards.forEach(card=>card.classList.remove("active"))
       card7Ref.current.classList.add("active");
     }
   }
-  function toleranceComparison(a,b){ // it tolerance up to 150 which one is closer to the center will get activated
+  function toleranceComparison(a:number,b:number){ // it tolerance up to 150 which one is closer to the center will get activated
     return Math.abs(a - b) <= 70;
   }
   useEffect(()=>{
@@ -65,7 +65,7 @@ const RecentWork = () => {
         <div className="flex flex-1 justify-center">
           <div 
            ref={wrapperRef}
-           className='flex card wrapper  items-center py-8
+           className='flex wrapper  items-center py-8
            recentWork gap-[20px]  overflow-x-auto   w-[1005px] '> 
           <div 
             className='flex flex-col min-w-[300px] h-[440px] rounded-[5px] overflow-hidden'>

@@ -1,39 +1,35 @@
-import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import TakeNow from "../buttons/TakeNow";
 import makinLogo from './../../assets/Asset 10@2x.png'
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { MouseEvent, useEffect, useRef, useState } from "react";
-import Line from "../separtors/Line";
-import { Opacity } from "@mui/icons-material";
-import { Scale } from "lucide-react";
+import Line from "../separators/separators";
 const Header = () => {
-  const homeRef = useRef();
-  const ulRef = useRef();
-  const [indicator,setIndicator]= useState(0);
-  const [relativeCoordinates,setRelativeCoordinates] = useState();
-  //console.log(indicator)
+  const homeRef = useRef<HTMLAnchorElement>(null);
+  const ulRef = useRef<HTMLUListElement>(null);
+  const [indicator,setIndicator]= useState<number>(0);
+  const [relativeCoordinates,setRelativeCoordinates] = useState<number>(0);
   useEffect(() =>{
     setRelativeCoordinates(ulRef.current!.getBoundingClientRect().left)
     setIndicator( homeRef.current!.getBoundingClientRect().width/2)
   },[]);
-  const moveIndicator = (xConrdinates) =>{
-    setIndicator(xConrdinates)
+  const moveIndicator = (xCoordinates:number) =>{
+    setIndicator(xCoordinates)
   }
   const handleIndicator = (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    //! get coordinates
-    const coordinates = e.target.getBoundingClientRect()
-    //console.log(coordinates)
+    const target = e.target as HTMLAnchorElement
+    const coordinates = target.getBoundingClientRect()
     moveIndicator(coordinates.left - relativeCoordinates! + coordinates.width/2 )
  
   }
-  const varients = {
+  const variants = {
     initial :{Opacity:0,y:-137},
     animate : {Opacity:1,y:0},
   }
   return ( 
     <>
       <motion.header  
-        variants={varients}
+        variants={variants}
         initial="initial"
         animate="animate"
         className='z-[2] sticky top-0 shadow ' >

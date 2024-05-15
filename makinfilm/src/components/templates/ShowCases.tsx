@@ -1,5 +1,5 @@
 import LoadMore from "../buttons/LoadMor";
-import Line from "../separtors/Line";
+import Line from "../separators/separators";
 import img1 from './../images/1.jpg'
 import img2 from './../images/2.jpg'
 import img3 from './../images/3.jpg'

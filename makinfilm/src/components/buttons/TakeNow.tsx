@@ -1,9 +1,6 @@
 import ArrowOutwardOutlinedIcon from '@mui/icons-material/ArrowOutwardOutlined';
-import { Button } from '../ui/button';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 const TakeNow = () => {
-  const MotionIconButton = motion(ArrowOutwardOutlinedIcon);
   return ( 
     <>
       <Link to={'https://wa.me/966560287771'} 
