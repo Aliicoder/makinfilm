@@ -16,7 +16,7 @@ const Header = () => {
   const moveIndicator = (xCoordinates:number) =>{
     setIndicator(xCoordinates)
   }
-  const handleIndicator = (e: MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleIndicator = (e: MouseEvent<HTMLAnchorElement>) => {
     const target = e.target as HTMLAnchorElement
     const coordinates = target.getBoundingClientRect()
     moveIndicator(coordinates.left - relativeCoordinates! + coordinates.width/2 )

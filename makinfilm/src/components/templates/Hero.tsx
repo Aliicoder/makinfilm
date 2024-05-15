@@ -1,10 +1,7 @@
 import TakeNow from "../buttons/TakeNow";
 import backGround from './../../assets/bg.webp'
 import VerticalBlackOverLay from "../overLays/VerticalBlackOverLay";
-import HorizontalBlackOverlay from "../overLays/HorizontalBlackOverLay";
 import { motion } from "framer-motion";
-import { Opacity } from "@mui/icons-material";
-import { duration } from "@mui/material";
 
 const Hero = () => {
   const variants = {

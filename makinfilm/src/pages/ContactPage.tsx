@@ -1,4 +1,3 @@
-import Header from "@/components/templates/Header";
 
 const ContactPage = () => {
   return ( 
